@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build hello world",
+        "type": "shell",
+        "command": "g++",
+        "args": ["-g", "-o", "ritoman", "ritoman.cpp"],
+        //"args": ["-g", "-o", "helloworld", "helloworld.cpp"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
