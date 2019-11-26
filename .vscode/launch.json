@@ -9,7 +9,10 @@
         "type": "cppdbg",
         "request": "launch",
         //"program": "${workspaceFolder}/ritoman.exe",
-        "program": "${workspaceFolder}/helloworld.exe",
+        /* "program": "${workspaceFolder}/insertionsort.exe" */
+        /* "program": "${workspaceFolder}/heapsort.exe", */
+        /* "program": "${workspaceFolder}/quicksort.exe", */
+        "program": "${workspaceFolder}/comparison.exe",
         "args": [],
         "stopAtEntry": true,
         "cwd": "${workspaceFolder}",
