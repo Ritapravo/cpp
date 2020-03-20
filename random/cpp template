@@ -1,0 +1,53 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include<vector>
+#include<algorithm>
+#define maxv(a) *max_element(a.begin(), a.end())
+#define maxa(a) *max_element(a, a+(sizeof(a) / sizeof(a[0])))
+#define ll long long int
+#define len(a) sizeof(a)/sizeof(a[0])
+#define f(i,a,b) for(ll i=a; i<=b; i++)
+#define g(i,a,b) for(ll i=a; i>=b; i--)
+#define append push_back
+
+using namespace std;
+ll pow(ll n, ll k, ll p);
+ll max3(ll a, ll b, ll c);
+ll min3(ll a, ll b, ll c);
+bool comp(ll a, ll b);
+
+int main(){
+    cout<<"Ritoman's C++ code."<<endl;
+    return 0;
+}
+
+ll max3(ll a, ll b, ll c){
+    ll m = max(a,b);
+    m = max(m,c);
+    return m;
+}
+ll min3(ll a, ll b, ll c){
+    ll m = min(a,b);
+    m = min(m,c);
+    return m;
+}
+
+ll pow(ll n, ll k, ll p=1000000007){
+    ll res = 1;
+    n = n%p;
+    while(n>0){
+        if(k%2==1){
+            k--;
+            res = (res*n)%p;
+        }
+        else{
+            k = k/2;
+            n = (n*n)%p;
+        }
+    }
+    return res;
+}
+
+bool comp(ll a, ll b){
+    return a<b;
+}

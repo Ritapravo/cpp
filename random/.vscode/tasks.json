@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build hello world",
+        "type": "shell",
+        "command": "g++",
+        //"args": ["-g", "-o", "ritoman", "ritoman.cpp"],
+        /* "args": ["-g", "-o", "insertionsort", "insertionsort.cpp"], */
+        /* "args": ["-g", "-o", "heapsort", "heapsort.cpp"], */
+        /* "args": ["-g", "-o", "quicksort", "quicksort.cpp"], */
+        "args": ["-g", "-o", "first", "first.cpp"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }

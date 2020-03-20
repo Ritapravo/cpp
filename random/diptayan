@@ -1,0 +1,101 @@
+#include <iostream>
+#include<bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+#define ll long long int
+#define f(i,a,b) for(ll i=a;i<=b;i++)
+#define g(i,a,b) for(ll i=a;i>=b;i--)
+#define F first
+#define S second
+#define mp make_pair
+#define pb push_back
+#define mh make_heap
+#define ph push_heap
+#define pq priority_queue
+
+using namespace std;
+using namespace __gnu_pbds;
+typedef tree<ll, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> pbds;
+
+ll mod=1000000007;
+
+ll power(ll x, ll y)
+{
+    if (y == 0)
+        return 1;
+    ll p = power(x, y/2) % mod;
+    p = (p * p) % mod;
+
+    return (y%2 == 0)? p : (x * p) % mod;
+}
+
+int main()
+{
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+ll t;
+cin>>t;
+while(t--)
+{
+
+    ll n;
+    cin>>n;
+    string s;
+    cin>>s;
+    ll a[n+1]={0};
+    ll b[n+1]={0};
+    ll link[n];
+    f(i,0,n-1) link[i]=n;
+    stack<pair<char,ll> > st;
+    g(i,n-1,0)
+    {
+        if(s[i]=='('&&!st.empty())
+        {
+            st.pop();
+            if(!st.empty())
+            link[i]=st.top().second;
+        }
+        else if(s[i]==')')
+        {
+            if(!st.empty())
+            link[i]=st.top().second;
+            st.push({')',i});
+        }
+        else
+        {
+            if(!st.empty())
+            link[i]=st.top().second;
+        }
+
+
+    }
+
+
+    ll odd[n+1]={0};
+    ll even[n+1]={0};
+    g(i,n-1,0)
+    {
+        if(s[i]==')')
+        {
+
+            a[i]=(a[link[i]]+(link[i]-i)+even[link[i]]);
+            even[i]=odd[link[i]];
+            odd[i]=(even[link[i]]+(link[i]-i));
+
+        }
+        else a[i]=a[link[i]];
+
+    }
+    ll sum=0;
+
+    f(i,0,n-1) { sum=(sum+a[i]);}
+    //ll q=n*(n+1)/2;
+    cout<<(2*sum%mod*(power(n,mod-2)%mod*power(n+1,mod-2)%mod)%mod)%mod<<"\n";
+
+
+}
+
+
+
+
+}
