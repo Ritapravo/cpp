@@ -8,7 +8,6 @@ ll dsearch(string s);
 ll mmass(vector<string> elem);
 vector<string> conv(string s);
 
-
 int main(){
     string s;
     cin>>s;

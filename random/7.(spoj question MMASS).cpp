@@ -5,12 +5,7 @@
 #include <bits/stdc++.h> 
 #define ll long long int
 using namespace std;
-
-int main(){
-    cout<<"MASS.IN"<<endl;
-    string s;
-    cin>>s;
-    cout<<"MASS.OUT"<<endl;
+ll mmass(string s){
     stack<int> st;
     for (char i: s){
         if(i=='(')
@@ -45,6 +40,14 @@ int main(){
         //cout<<st.top()<<" ";
         st.pop();
     }
+    return tot;
+}
+int main(){
+    cout<<"MASS.IN"<<endl;
+    string s;
+    cin>>s;
+    cout<<"MASS.OUT"<<endl;
+    ll tot = mmass(s);
     //cout<<endl;
     cout<<tot<<endl;  
     return 0;
