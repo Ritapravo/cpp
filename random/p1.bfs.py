@@ -39,12 +39,13 @@ def makegraph():
         graph[y-1].append(x)
     return graph
 
-#graph = [[2,3],[1,4,5],[1,6,7],[2,8],[2,8],[3,8],[3,8],[4,5,6,7]]
-graph = [[],[4,5],[6,7],[2],[2],[3],[3],[]]
-#graph = makegraph()
-#print(graph)
-li = bft(graph,1)
-print(li)
+if __name__== "__main__":
+    #graph = [[2,3],[1,4,5],[1,6,7],[2,8],[2,8],[3,8],[3,8],[4,5,6,7]]
+    graph = [[],[4,5],[6,7],[2],[2],[3],[3],[]]
+    #graph = makegraph()
+    #print(graph)
+    li = bft(graph,1)
+    print(li)
 
 """ 
 8 10 #number of nodes and edges
