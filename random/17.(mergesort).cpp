@@ -12,13 +12,13 @@ void mergesort(v(int) &arr, int l , int r);
 
 
 int main(){
-    cout<<"Back once again"<<endl;
-    v(v(int)) arr {{1,3},{6,6},{6,6}};
+    cout<<"Ritoman is back once again!!"<<endl;
+    //v(v(int)) arr {{1,3},{6,6},{6,6}};
     
     v(int) ab{10, 9, 0, 0, 1, 6, 9, 4};
     mergesort(ab,0,ab.size()-1);
     print(ab);
-    print(arr);
+    //print(arr);
     return 0;
 }
 

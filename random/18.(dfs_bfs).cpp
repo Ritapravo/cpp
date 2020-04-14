@@ -13,7 +13,7 @@ v(int) dfs(v(v(int))&graph, int v);
 
 signed  main(){
     v(v(int)) graph1{{2,3},{1,4,5},{1,6,7},{2,8},{2,8},{3,8},{3,8},{4,5,6,7}};
-    v(int) traversal1 = dfs1(graph1,1);
+    v(int) traversal1 = dfs(graph1,1);
     v(int) traversal2 = bfs(graph1,2);
     print(traversal1);
     print(traversal2);
@@ -47,7 +47,6 @@ v(int) dfs(v(v(int))&graph, int v){
         }
     }
     return traversal;
-    
 }
 v(int) bfs(v(v(int))&graph, int v){
     int n = graph.size();
@@ -92,6 +91,7 @@ void print(v(int)&arr){
             cout<<",";
     }cout<<"}"<<endl;
 }
+
 
 
 

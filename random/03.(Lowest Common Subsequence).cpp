@@ -1,4 +1,4 @@
-//Lowest Common Subsequence in C++
+//Longest Common Subsequence in C++
 #include<iostream>
 #include<bits/stdc++.h>
 #include<vector>
