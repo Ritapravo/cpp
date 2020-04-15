@@ -1,0 +1,84 @@
+{
+	
+	"opening template": {
+	 	"prefix": "cpp",
+	 	"body": [
+			"//g++ \"first.cpp\" -o \"first\" && \"first\"",
+			"//g++ \"first.cpp\" && a",
+			"#include<iostream>",
+			"#include<vector>",
+			"#include<bits/stdc++.h>",
+			"#define int long long int",
+			"#define v(x) vector<x>",
+			"using namespace std;",
+			"void print(v(v(int)) &arr);",
+			"void print(v(int)&arr);",
+
+			"\n\nsigned main(){",
+			"\tcout<<\"Hello Ritoman\"<<endl;",
+			"\treturn 0;",
+			"}\n"
+	 	],
+	 	"description": "start"
+	},
+	"print":{
+		"prefix": "print",
+		"body": [
+			"\n\nvoid print(v(int)&arr){",
+			"\tcout<<\"{\";",
+			"\tfor(auto i=arr.begin(); i!=arr.end(); i++){",
+			"\t\tcout<<*i;",
+			"\t\tif(i!=arr.end()-1)",
+			"\t\t\tcout<<\",\";",
+			"\t}cout<<\"}\"<<endl;",
+			"}",
+
+			"void print(v(v(int)) &arr){",
+			"\tcout<<\"{\";",
+			"\tfor(auto i = arr.begin(); i!=arr.end(); i++){",
+			"\t\tcout<<\"{\";",
+			"\t\tfor(auto j =(*i).begin(); j!=(*i).end(); j++){",
+			"\t\t\tcout<<*j;",    
+			"\t\t\tif(j!=(*i).end()-1)",
+			"\t\t\t\tcout<<\",\";",
+			"\t\t}",
+			"\t\tcout<<\"}\";",
+			"\t\tif(i!=arr.end()-1)",
+			"\t\t\t\tcout<<\",\";",
+			"\t}cout<<\"}\"<<endl;",
+			"}"
+		],
+		"description": "print functions"
+	},
+	"pri":{
+		"prefix": "pri",
+		"body": [
+			"cout<<${val}<<endl;"
+		],
+		"description": "cout"
+	},
+	"v2":{
+		"prefix": "v2",
+		"body": [
+			"v(v(int))${arr};"
+		],
+		"description": "2d vector"
+	},
+	"fori":{
+		"prefix": "fori",
+		"body": [
+			"for(int i = 0; i<${size}; i++){${code}}"
+		],
+		"description": "for loop"
+	},
+
+	"forj":{
+		"prefix": "forj",
+		"body": [
+			"for(int j = 0; j<${size}; j++){${code}}"
+		],
+		"description": "for loop"
+	},
+
+
+}

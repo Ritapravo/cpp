@@ -1,3 +1,4 @@
+//g++ "first.cpp" && a
 #include<iostream>
 #include<vector>
 #include<bits/stdc++.h>
