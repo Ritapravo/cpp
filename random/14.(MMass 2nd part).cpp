@@ -1,3 +1,4 @@
+//g++ "14.(MMass 2nd part).cpp" && a
 #include<iostream>
 #include<vector>
 #include<bits/stdc++.h>
@@ -9,6 +10,7 @@ ll mmass(vector<string> elem);
 vector<string> conv(string s);
 
 int main(){
+    
     string s;
     cin>>s;
     vector<string> elem = conv(s);

@@ -1,3 +1,4 @@
+//g++ "tmp.cpp" && a
 #include<iostream>
 #include<vector>
 #include<bits/stdc++.h>
@@ -10,5 +11,8 @@ void print(v(int)&arr);
 
 signed main(){
     cout<<"Hello Ritoman"<<endl;
+    int s;
+    cin>>s;
+    cout<<s+5<<endl;
     return 0;
 }

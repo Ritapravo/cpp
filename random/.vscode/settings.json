@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.java": "properties",
-        "chrono": "cpp",
-        "ostream": "cpp",
-        "iostream": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
-}
