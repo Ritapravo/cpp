@@ -6,42 +6,33 @@
         "type": "shell",
         "command": "g++  \"${file}\"",
         "presentation": {
-          //"reveal": "silent",
           "focus": true,
           "echo": false,
-          "showReuseMessage": true,
+          "showReuseMessage": true
         },
-        
-        "args": [
-          //"-g","-o","first","first.cpp",
-          //"&&","a"
-        ],
-        
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
+        "args": [],
+        "group": "build",
         "problemMatcher": []
       },
-
       {
-        
-        "label": "build-run",
-        "command": "g++  \"${file}\"", // Could be any other shell command
-        "args": ["&&", "a"],
+        "label": "build-run-cpp",
+        "command": "g++  \"${file}\"",
+        "args": [
+          "&&",
+          "a"
+        ],
         "type": "shell",
         "presentation": {
-          //"reveal": "silent",
           "focus": true,
           "echo": false,
-          "showReuseMessage": true,
+          "showReuseMessage": true
         },
         "group": {
           "kind": "test",
           "isDefault": true
         },
-      },
-      
+        "problemMatcher": []
+      }
     ]
     
   } 

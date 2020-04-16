@@ -24,6 +24,7 @@ int main(){
     for(ll i : alpset)
         cout<<i<<" ";
     cout<<endl;
-    cout<<*alpset.find(6)<<" "<<*alpset.find(1);
+    cout<<*alpset.find(6)<<" "<<*alpset.find(10);
+    return 0;
 }
 //set contains only distinct elements
