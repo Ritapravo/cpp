@@ -7,19 +7,22 @@
 using namespace std;
 void print(v(v(int)) &arr);
 void print(v(int)&arr);
-v(int) findpath(v(v(int))&graph, int s, int d);
 
+void fpath(v(v(int))&graph, int u, int d, v(bool)vis, v(int)&path,  v(int)curr = {});
 
 
 signed main(){
+    cout<<"Hello Ritoman"<<endl;
     v(v(int))graph{{1,2,3},{3},{0,1},{}};
-    //v(v(int))graph{{1},{0,2,3},{1},{1}};
-    int s = 0, d = 1;
-    v(int)path = findpath(graph, s,d);
+    int s =2, d = 3;
+    v(int) path = {};
+    fpath(graph,s, d,v(bool)(graph.size(),false), path);
     print(path);
+    return 0;
 }
 
-void findutil(v(v(int)) &graph, int u, int d, v(bool)vis, v(int)&path, v(int)curr={}){
+
+void fpath(v(v(int)) &graph, int u, int d, v(bool)vis, v(int)&path, v(int)curr){
     vis[u] = true;
     curr.push_back(u);
     if(u==d){
@@ -29,7 +32,7 @@ void findutil(v(v(int)) &graph, int u, int d, v(bool)vis, v(int)&path, v(int)cur
     else{
         for(int i: graph[u]){
             if(!vis[i])
-                findutil(graph, i, d, vis, path, curr);
+                fpath(graph, i, d, vis, path, curr);
         }
     }
     vis[u] = false;
@@ -37,19 +40,7 @@ void findutil(v(v(int)) &graph, int u, int d, v(bool)vis, v(int)&path, v(int)cur
 }
 
 
-v(int) findpath(v(v(int))&graph, int s, int d){
-    int n = graph.size();
-    v(bool) vis(n, false);
-    int paths  = 0;
-    v(int)curr = {};
-    v(int) path = {};
-    findutil(graph,s, d,vis, path);
-    //print(path);
-    return path;
-}
 
-//g++ "first.cpp" && a
-//g++ "F:\cpp\random\first.cpp" && a 
 
 
 
