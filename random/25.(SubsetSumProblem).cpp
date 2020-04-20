@@ -6,7 +6,7 @@
 #define v(x) vector<x>
 using namespace std;
 void print(int row, int col);
-int dp[101][101];
+int dp[101][1001];
 
 int subsetsum(int arr[], int n , int s){
     if(s==0){
