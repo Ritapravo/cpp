@@ -18,7 +18,7 @@ signed main(){
     int n  = sizeof(arr)/sizeof(arr[0]);
     int s = 10;
     cout<<subsetno(arr, n, s)<<endl;
-    //print(n+1, s+1);
+    print(n+1, s+1);
     return 0;
 }
 

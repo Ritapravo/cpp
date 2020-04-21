@@ -38,7 +38,7 @@ signed main(){
     ios_base::sync_with_stdio(0);cin.tie(0);
     memset(dp,-1, sizeof(dp));
     int arr[] = {2,3,7,8,10};
-    int n = 5, s = 13;
+    int n = 5, s = 11;
     cout<<subsetsum(arr, n, s)<<endl;
     print(n+1, s+1);
     return 0;

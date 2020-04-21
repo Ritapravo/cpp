@@ -1,23 +1,58 @@
-#include <iostream>
-#include<stdio.h>
+#include<iostream>
 #include<vector>
 #include<bits/stdc++.h>
-
-using  namespace std;
-
-void abc(int a){
-	++a;
-	printf("%d",a);
-}
+#define int long long int
+#define v(x) vector<x>
+using namespace std;
 
 signed main(){
-	int a=10;
-	abc(++a);
-	abc(a++);
-	printf("%d",a);
+	int t;
+	cin>>t;
+	while(t--){
+		string s1,s2;
+		cin>>s1>>s2;
+		int n = s1.size();
+		s1 = s1 + "#";
+		s2 = s2 + "#";
+
+		int c = 0,x=-1;
+		v(int) A,B;
+
+		int l = 0, k =0;
+		for(int i =0; i<=n; i++){
+			if(s1[i]!=s2[i]){
+				c++;
+				l++;
+			}
+			else{
+				if(c!=0){
+					if(k>0)
+						A.push_back(i-c-x);
+					k++;
+					x = i;
+				}
+				c=0;
+			}
+		}
+		
+		int ans =l*k;
+		int i =0;
+
+		if(k>1)sort(A.begin(), A.end());
+		
+		while(k>1){
+			l += A[i++];
+			int tmp = (--k)*l;
+			if(tmp<ans)
+				ans = tmp;
+		}
+
+		cout<<ans<<endl;
+		
+	}
+	return 0;
 }
-//g++ "tmp.cpp" && a
-//g++ "F:\cpp\random\tmp.cpp" && a 
+
 
 
 
