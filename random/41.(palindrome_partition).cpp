@@ -33,7 +33,7 @@ int solve(string s, int i, int j){
             dp[i][k] = solve(s,i,k);
         if(dp[k+1][j]==-1)
             dp[k+1][j] = solve(s, k+1, j);
-            
+
         int tmp = 1 + dp[i][k] + dp[k+1][j];
         mn = min(tmp,mn);
     }
@@ -58,3 +58,5 @@ void print(int row, int col){
         cout<<endl;
     }
 }
+
+//git add . && git commit -m "x" && git push origin master
