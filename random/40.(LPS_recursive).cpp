@@ -13,6 +13,10 @@ int solve(string s, int i, int j){
         dp[i][j] = 1;
         return dp[i][j];
     }
+    if(i>j){
+        dp[i][j] = 0;
+        return dp[i][j];
+    }
     if(dp[i][j]!=-1){
         return dp[i][j];
     }
@@ -30,7 +34,7 @@ int solve(string s, int i, int j){
 signed main(){
     cout<<"Hello Ritoman"<<endl;
     memset(dp, -1, sizeof(dp));
-    string s = "abbaba";
+    string s = "alpha";
     int n = s.size();
     int ans = solve(s, 0, n-1);
     cout<<ans<<endl;
