@@ -18,3 +18,4 @@ Goto A
 echo invalid input
 Pause
 Goto A
+::end
