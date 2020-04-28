@@ -7,7 +7,7 @@ def rangeBitwiseAnd(m, n):
         return 0
     ans = 0
     i = 0
-    print(l1)
+    #print(l1)
     while(i<l1):
         if(x[i]=='0'):
             break
@@ -20,4 +20,5 @@ def rangeBitwiseAnd(m, n):
     return ans
 
 print(rangeBitwiseAnd(5,7))
+print("ritoman")
 #python "F:\cpp\random\tmp.py"

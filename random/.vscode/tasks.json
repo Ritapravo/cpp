@@ -2,16 +2,19 @@
     "version": "2.0.0",
     "tasks": [
       {
-        "label": "build hello world",
+        "label": "python run",
         "type": "shell",
-        "command": "g++  \"${file}\"",
+        "command": "python  \"${file}\"",
         "presentation": {
           "focus": true,
           "echo": false,
           "showReuseMessage": true
         },
         "args": [],
-        "group": "build",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
         "problemMatcher": []
       },
       {
