@@ -21,4 +21,3 @@ def rangeBitwiseAnd(m, n):
 
 print(rangeBitwiseAnd(5,7))
 print("ritoman")
-#python "F:\cpp\random\tmp.py"

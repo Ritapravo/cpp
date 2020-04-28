@@ -59,4 +59,3 @@ void print(int row, int col){
     }
 }
 
-//git add . && git commit -m "x" && git push origin master
