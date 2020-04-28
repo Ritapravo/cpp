@@ -1,3 +1,3 @@
 @echo off
 
-git add . && git commit -m "x" && git pus origin master
+git add . && git commit -m "%DATE%" && git push origin master
