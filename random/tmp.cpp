@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include<iostream>
 #include<vector>
 #include<bits/stdc++.h>
@@ -10,10 +11,9 @@ void print(v(int)&arr);
 
 signed main(){
 	cout<<"Hello Ritoman"<<endl;
-	char c = '1';
-	int n = c-'0';
-	if(c>'0')
-		cout<<"yah"<<endl;
+	int a;
+	a = printf("made%deasy",printf("kolkata") );
+	printf("%d", a);
 	return 0;
 }
 //done
