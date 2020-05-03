@@ -3,5 +3,9 @@
     {
         "key": "home",
         "command": "workbench.action.tasks.test"
+    },
+    {
+        "key": "end",
+        "command": "workbench.action.terminal.runSelectedText"
     }
 ]
