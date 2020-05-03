@@ -35,7 +35,7 @@ void LCS(string s1, string s2, int n1, int n2){
 signed main(){
     memset(dp, -1, sizeof(dp));
     ans = 0;
-    string s1 = "abcdef", s2 = "cabcdfe";
+    string s1 = "ab", s2 = "cabcdfe";
     int n1 = s1.size(), n2 = s2.size();
     LCS(s1, s2, n1, n2);
     cout<<ans<<endl;

@@ -32,9 +32,10 @@ int solve(int arr[], int n , int s){
 
 signed main(){
     memset(dp, -1, sizeof(dp));
-    int n =3, s = 5;
-    int arr[] = {3,2,1};
+    int n =3, s = 11;
+    int arr[] = {1,2,5};
     cout<<solve(arr, n, s)<<endl;
+    cout<<INT_MAX-1<<endl;
     print(n,s);
     return 0;
 }
