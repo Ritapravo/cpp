@@ -23,7 +23,7 @@ signed main(){
 }
 
 int subsetno(int arr[], int n , int s){
-    if(s==0){
+    if(s==0 && n==0){
         dp[n][s] = 1;
         return dp[n][s];
     }

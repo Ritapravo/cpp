@@ -39,8 +39,8 @@ int solve(int arr[], int n , int s){
 signed main(){
     cout<<"Hello Ritoman"<<endl;
     memset(dp, -1, sizeof(dp));
-    int arr[] = {1,1,2,3};
-    int target = 1;
+    int arr[] = {1,1,1,1,1};
+    int target = 3;
     int sum = 0, n = sizeof(arr)/sizeof(arr[0]);
     for(int i =0; i<n ; i++)sum+=arr[i];
     int ans;
