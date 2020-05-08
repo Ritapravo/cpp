@@ -11,8 +11,8 @@ int dp[101][1001];
 
 
 
-signed main(){
-    
+signed main()
+{
     memset(dp, -1, sizeof(dp));
     int arr[] = {2,3,5,6,8,10};
     int n  = sizeof(arr)/sizeof(arr[0]);

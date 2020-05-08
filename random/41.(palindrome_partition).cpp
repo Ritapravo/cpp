@@ -43,7 +43,7 @@ int solve(string s, int i, int j){
 
 signed main(){
     memset(dp, -1, sizeof(dp));
-    string s = "ababb";
+    string s = "aabcc";
     int n = s.size();
     int ans = solve(s,0,n-1);
     cout<<ans<<endl;
