@@ -1,5 +1,7 @@
-#include <iostream>
-#include <bits/stdc++.h>
+//https://www.interviewbit.com/problems/evaluate-expression-to-true/
+
+#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int m = 1003;
 
@@ -9,7 +11,7 @@ class Solution {
 };
 
 int Solution::cnttrue(string s) {
-	int n = s.size();
+    int n = s.size();
     int dp[n/2 +1][n/2 +1][2];
     memset(dp,0,sizeof(dp));
     
@@ -50,8 +52,9 @@ int Solution::cnttrue(string s) {
     return dp[0][n/2][1]%m;
 }
 
-int main() {
-	Solution Sol; 
-	cout << Sol.cnttrue("F&F&T^T"); 
-	return 0;
+int main(){
+    //cout<<"Hello Ritoman"<<endl;
+    Solution Sol;
+    cout<<Sol.cnttrue("F&F&T^T")<<endl;
+    return 0;
 }
