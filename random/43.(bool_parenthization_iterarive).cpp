@@ -50,11 +50,23 @@ int Solution::cnttrue(string s) {
         }
     }
     return dp[0][n/2][1]%m;
+
+
+
+
+
+
+
+
+
+
+
+    
 }
 
 int main(){
     //cout<<"Hello Ritoman"<<endl;
     Solution Sol;
-    cout<<Sol.cnttrue("F&F&T^T")<<endl;
+    cout<<Sol.cnttrue("T^T^T^F|F&F^F|T^F^T")<<endl;
     return 0;
 }

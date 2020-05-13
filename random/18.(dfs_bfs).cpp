@@ -14,7 +14,7 @@ v(int) dfs(v(v(int))&graph, int v);
 signed  main(){
     v(v(int)) graph1{{2,3},{1,4,5},{1,6,7},{2,8},{2,8},{3,8},{3,8},{4,5,6,7}};
     v(int) traversal1 = dfs(graph1,1);
-    v(int) traversal2 = bfs(graph1,2);
+    v(int) traversal2 = bfs(graph1,1);
     print(traversal1);
     print(traversal2);
 }
