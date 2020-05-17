@@ -1,15 +1,6 @@
 #include<stdio.h>
 
-int a = 10;
-void B(){
-    int b;
-    int c = 30;
-    a = 40;
-}
 int main(){
-    int a = 20;
-    int b;
-    b = 30;
-    B();
-    printf("%d %d", a,b);
+    int a[] = {10,20,30,40,50};
+    printf("%d %d %d %d ", a[2],2[a],*(a+2),*(2+a));
 }
