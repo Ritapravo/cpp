@@ -1,6 +1,16 @@
-#include<stdio.h>
+#include<iostream>
+#include<vector>
+#include<bits/stdc++.h>
+#define int long long int
+#define v(x) vector<x>
+using namespace std;
+void print(v(v(int)) &arr);
+void print(v(int)&arr);
 
-int main(){
-    int a[] = {10,20,30,40,50};
-    printf("%d %d %d %d ", a[2],2[a],*(a+2),*(2+a));
+
+signed main(){
+    cout<<"Hello Ritoman"<<endl;
+    for(int i = 1; i<5; ++i){cout<<i<<endl;}
+    for(int i = 1; i<5; i++){cout<<i<<endl;}
+    return 0;
 }
