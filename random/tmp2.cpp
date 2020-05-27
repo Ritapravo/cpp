@@ -1,16 +1,7 @@
-#include<iostream>
-#include<vector>
-#include<bits/stdc++.h>
-#define int long long int
-#define v(x) vector<x>
-using namespace std;
-void print(v(v(int)) &arr);
-void print(v(int)&arr);
+#include<stdio.h>
 
-
-signed main(){
-    cout<<"Hello Ritoman"<<endl;
-    for(int i = 1; i<5; ++i){cout<<i<<endl;}
-    for(int i = 1; i<5; i++){cout<<i<<endl;}
+int main(){
+    int x[4][3] = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
+    printf("%u %u %u",x, (*x)+1,sizeof(char));
     return 0;
 }
