@@ -3,9 +3,9 @@
 def dfs1(u, p):
     for i in graph[u]:
         if(i!=p):
-            dp[u] +=  dfs1(i,u)
-    dp[u] += letters[u]
-    return dp[u]
+            dp1[u] +=  dfs1(i,u)
+    dp1[u] += letters[u]
+    return dp1[u]
 
 
 def dfs2(u, p):
@@ -25,7 +25,7 @@ if __name__=="__main__":
         a, b = map(int, input().split())
         graph[a].append(b)
         graph[b].append(a)
-    dp = ["" for i in range(n+1)]
+    dp1 = ["" for i in range(n+1)]
     dp2 = [[0 for j in range(26)]for i in range(n+1)]
     dfs1(1,1)
     dfs2(1,1)
