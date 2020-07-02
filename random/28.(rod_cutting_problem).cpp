@@ -7,6 +7,14 @@
 using namespace std;
 int dp[101][1001];
 
+void print(int row, int col){
+    for(int i =0; i<=row; i++){
+        for (int j =0; j<=col; j++)
+            cout<<(dp[i][j]==-1? "X":to_string(dp[i][j]))<<" ";
+        cout<<endl;
+    }
+}
+
 int ks(int length[], int values[], int n , int l){
     if(n==0 || l==0){
         dp[n][l] = 0;
@@ -33,5 +41,6 @@ signed main(){
     int length[] = {1,2,3,4};
     int values[] = {5,6,16,8};
     cout<<ks(length, values, n , l)<<endl;
+    print(n,l);
     return 0;
 }

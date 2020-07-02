@@ -1,40 +1,69 @@
-#include<iostream>
-#include<vector>
-#include<bits/stdc++.h>
-#define int long long int
-#define v(x) vector<x>
+#include <bits/stdc++.h>
 using namespace std;
-void print(v(v(int)) &arr);
-void print(v(int)&arr);
 
-int min3(int a, int b, int c){
-    return min(a,min(b,c));
+bool prime[10000]; 
+
+
+void f(){
+    memset(prime, true, sizeof(prime)); 
+  
+    for (int p=2; p*p<=10000; p++) 
+    { 
+        if (prime[p] == true) 
+        { 
+            for (int i=p*p; i<=10000; i += p) 
+                prime[i] = false; 
+        } 
+    } 
 }
 
-int solve(int arr[], int n, int m){
-    if(n==0){
-        return 0;
-    }
-    if(arr[n-1]==0){
-        return 1 + count(arr, n-1, 0);
-    }
-    if(arr[n-1]==1){
-        if(m==0){
-            
-        }    
-        return min(1+count(arr, n-1, 0), (m==1? INT_MAX: count(arr, n-1, 1)));
-    }
-    if(arr[n-1]==2){
-        return min(1+count(arr, n-1, 0), (m==2? INT_MAX: count(arr, n-1, 2)));
-    }
-    else{
-
-    }
-}
-
-
-signed main(){
-    int arr = {1,3,3,2,1,2,3};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int ans = solve(arr, n, 0);
+int main(){
+  f();
+   int n1, n2;
+   cin>>n1>>n2;
+   vector<int> vec;
+   for(int i=n1;i<=n2;i++){
+      int flag=0;
+       for(int j=2;j<=sqrt(i);j++){
+           if(i%j==0) {
+               flag=1;
+               break;
+           }
+       }
+         if(flag==0) vec.push_back(i);
+   }
+   set<int> sp;
+   vector<int> vec1;
+   int lvec = vec.size();
+   for(int i=0;i<lvec;i++){
+         for(int j=0;j<lvec;j++){
+          if(i!=j){
+              string s1 = to_string(vec[i]); 
+              string s2 = to_string(vec[j]); 
+  
+              string s = s1 + s2; 
+   
+              int c = stoi(s); 
+              if(prime[c]&&sp.find(c)==sp.end())
+                 {sp.insert(c);vec1.push_back(c);}
+          }
+       }
+   }
+   int max=INT_MIN;
+   int min = INT_MAX;
+   int lvec1=vec1.size();
+   for(int i=0;i<lvec1;i++){
+     if(max<vec1[i]) max=vec1[i];
+     if(min>vec1[i]) min=vec1[i];
+   }
+    long long int a=min; long long int b=max; long long int c; 
+    cout<<lvec1<<" "<<a<<" "<<b<<endl;
+     for(int i=0;i<lvec1-2;i++){
+       c=a+b;
+       a=b; b=c;
+  }
+   cout<<c<<'\n';
+   long long int x = 9223372036854775807;
+   //x += 1;
+   cout<<x<<endl;
 }
