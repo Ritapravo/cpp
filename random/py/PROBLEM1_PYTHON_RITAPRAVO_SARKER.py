@@ -1,23 +1,21 @@
-#https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/a-game-of-numbers-1-5d3a8cb3/
+import sys
+sys.stdin=open('input.txt','r')
+sys.stdout=open('output.txt','w')
 
-arr = []
-n = int(input())
-a, b, s1, s2 = dict(), dict(), [], []
-for i in range(n):
-    arr.append(int(input()))
-    x = arr[i]
-    while(s1!=[] and s1[-1][0]<x):
-        a[s1.pop()[1]] = i
-    s1.append((x, i))
-    while(s2!=[] and s2[-1][0]>x):
-        b[s2.pop()[1]] = i
-    s2.append((x, i))
-for i in range(n):
-    if i in a:
-        if a[i] in b:
-            print(arr[b[a[i]]], end = " ")
+for _ in range(int(input())):
+    n = int(input())
+    s = input()
+    
+    a = 0
+    b = 0
+    for i in s:
+        if(i=='A'):
+            a += 1
         else:
-            print(-1, end = " ")
+            b += 1
+    res = ""
+    if(max(a,b)-min(a,b)==1):
+        res += "Y"
     else:
-        print(-1, end = " ")
-print()
+        res += "N"    
+    print("Case #{}: {}".format(_+1, res))

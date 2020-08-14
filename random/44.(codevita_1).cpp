@@ -9,23 +9,20 @@ void print(v(int)&arr);
 
 
 signed main(){
-    int n;
-    cin>>n;
-    string s1, s2;
-    cin>>s1>>s2;
-    int j = 0, tmp;
-    for(int i = 0; i<n; i++){
-        int x = 0;
-        while(x<n){
-            if(s1[i]==s2[(j+x)%n]){
-                j++;
-                break;
-            }
-            else
-                j++;
-            x++;
-        }
-        if()
-    }
-
+   //cout<<"Hello Ritoman"<<endl;
+   int a;
+   cin>>a;
+   cout<<a<<endl;
+   return 0;
 }
+
+//g++ "44.(codevita_1).cpp" && a
+//g++ "F:\cpp\random\44.(codevita_1).cpp" && a 
+/* 
+#include<stdio.h>
+
+int main(){
+   int n ;
+   scanf("%d",&n);
+   printf("%d",n*10);
+} */
