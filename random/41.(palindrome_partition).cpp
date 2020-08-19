@@ -59,3 +59,5 @@ void print(int row, int col){
     }
 }
 
+//g++ "41.(palindrome_partition).cpp" && a
+//g++ "F:\cpp\random\41.(palindrome_partition).cpp" && a 

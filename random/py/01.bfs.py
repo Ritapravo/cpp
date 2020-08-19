@@ -69,3 +69,5 @@ if __name__== "__main__":
          \   /
            8
 """
+
+#python "F:\cpp\random\py\01.bfs.py"
