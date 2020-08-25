@@ -1,52 +1,52 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+#define N 8
 
-
-int main(){
-	int n;
-	cin>>n;
-	string s;
-	cin>>s;
-	char prev = 'x';
-	int ind = 0;
-	int a_count = 0, b_count =0;
-	for( char c:s){
-		if(c=='A')a_count++;
-		if(c=='B')b_count++;
-	}
-	for(int i = 0; i<n; i++){
-		if(s[i]=='-')
-			continue;
-		else if(s[i]=='A'){
-			if(prev=='A')
-				a_count += i-ind-1;
-			else if(prev=='B'){
-				a_count += (i-ind-1)/2;
-				b_count += (i-ind-1)/2;
-			}
-			else
-				a_count += i;
-			prev = 'A';
-			ind = i;
-		}
-		else{
-			if(prev=='B')
-				b_count += i-ind-1;
-			prev = 'B';
-			ind = i;
-		}
-	}
-	if(prev=='B')
-		b_count += n-ind-1;
-	if(a_count>b_count)
-		cout<<'A'<<endl;
-	else if (b_count>a_count)
-		cout<<'B'<<endl;
-	else	
-		cout<<"Coalition government"<<endl;
-	return 0;
+void swap(int &x, int &y){
+    int temp = x;
+    x = y;
+    y = temp;
 }
 
-//g++ "tmp5.cpp" && a
-//g++ "F:\cpp\random\tmp5.cpp" && a 
+
+int partition(int arr[], int p, int q){
+    int pivot = p;
+    int i = p+1, j = q, x =arr[p];
+	//cout<<"1 "<<i<<" "<<j<<" "<<arr[i]<<endl;
+    while(i<=j){
+        while(i<=j && (arr[i]<=x ||arr[j]>=x)){
+			if (arr[i]<=x)i++;
+			if (arr[j]>=x)j--;
+		}
+		//cout<<"2 "<<i<<" "<<j<<" "<<arr[i]<<endl;
+		if(i<j)swap(arr[i],arr[j]);
+    }
+    swap(arr[pivot],arr[j]);
+    return j;
+}
+
+
+void QuickSort(int arr[], int p, int q){
+    if(p<q){
+        int j = partition(arr,p,q);
+        QuickSort(arr, p, j-1);
+        QuickSort(arr, j+1, q);
+    }
+}
+
+
+signed main(){
+    cout<<"Hello Ritoman"<<endl;
+    int arr[] = {35,20,40,50,30,60,15,75};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    QuickSort(arr,0,n-1);
+    for(int i = 0; i<n; i++){cout<<arr[i]<<" ";}
+
+
+	int arr2[] = {2,2,2,2,2,2,2,2,2};
+	int n2 = sizeof(arr2)/sizeof(arr2[0]);
+    int x = partition(arr2,0,n2-1);
+	cout<<"\n"<<x<<endl;
+    return 0;
+}
