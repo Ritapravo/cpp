@@ -4,10 +4,10 @@
 #define N 20
 using namespace std;
 void adjust(int[], int, int); //O(log(n))
-void push(int[], int &, int); //O(log(n))
-int pop(int[], int & );       //O(log(n))
 void heapify (int[], int);    //O(n)
 void heapify2(int[], int);    //O(nlog(n))
+void push(int[], int &, int); //O(log(n))
+int  pop(int[], int & );      //O(log(n))
 void heapsort(int[], int);    //O(nlog(n))
 
 signed main(){
