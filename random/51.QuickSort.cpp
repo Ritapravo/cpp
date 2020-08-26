@@ -41,10 +41,11 @@ signed main(){
     for(int i = 0; i<n; i++){cout<<arr[i]<<" ";}
 
 
-	int arr2[] = {2,2,2,2,2,2,2,2,2};
+	int arr2[] = {2,2,2,2,2,2,2};
 	int n2 = sizeof(arr2)/sizeof(arr2[0]);
     int x = partition(arr2,0,n2-1);
 	cout<<"\n"<<x<<endl;
+    for(int i = 0; i<n2; i++){cout<<arr2[i]<<" ";}
     return 0;
 }
 
