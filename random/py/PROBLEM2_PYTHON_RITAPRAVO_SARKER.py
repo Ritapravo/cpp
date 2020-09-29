@@ -1,44 +1,39 @@
-import sys
-def solve(n, ans, tmp, ni):
-    if(n<=0):
-        op = 0
-        for i in range(ni):
-            op += tmp[i]//pow(2,i)
-        ans.append(op)
-        return 
-    m = n
-    while(m>=0):
-        tmp[m], tmp[n] = tmp[n], tmp[m]
-        solve(n-1, ans, tmp[:], ni)
-        tmp[m], tmp[n] = tmp[n], tmp[m]
-        m -= 1
+
+def solve(li,n): 
+
+    ind = 0
+    for i in range(9,-1,-1): 
+        start = ind 
+        ma = -100000
+        j = ind
+        while(j<n):   
+            if ( (li[j] & (1 << i)) and li[j] > ma ):    
+                ma,start = li[j] ,j
+            j+=1
+
+        if ( not ma != -100000): 
+            continue
+ 
+        li[ind],li[start] = li[start],li[ind]
+
+        start = ind  
+        for j in range(n): 
+
+            if ((not j == start) and (li[j] & (1 << i))): 
+                li[j] = li[j] ^ li[start] 
+        ind += 1
+    ans = 0
+    for i in li: 
+        ans =ans ^ i 
+    return ans     
 
 
-def search(nums, target):
-    l = 0
-    r = len(nums)-1
-    while(l<=r):
-        mid = l+(r-l)//2
-        if((mid == 0 or nums[mid]>nums[mid-1]) and nums[mid]==target):
-            return mid
-        elif(target>nums[mid]):
-            l = mid+1
-        else:
-            r = mid-1
-    return l
+
+N = 10
+n = int(input())
+li = [int(i) for i in input().split()]
+ans = solve(li,n)
+print(ans)
 
 
-n = int(sys.stdin.readline())
-li1 = [int(x) for x in sys.stdin.readline().split()]
-li = []
-solve(n-1, li, li1, n)
-li.sort()
-print(li)
-nx = len(li)
-q = int(sys.stdin.readline())
-qli = [int(x) for x in sys.stdin.readline().split()]
-ans = []
-for i in qli:
-    ans.append(nx-search(li, i))
-for i in ans:
-    sys.stdout.write(str(i)+" ")
+#python "F:\cpp\random\py\PROBLEM2_PYTHON_RITAPRAVO_SARKER.py"

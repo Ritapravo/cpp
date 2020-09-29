@@ -1,21 +1,32 @@
 import sys
-sys.stdin=open('input.txt','r')
-sys.stdout=open('output.txt','w')
+sys.setrecursionlimit(1000000)
 
-for _ in range(int(input())):
-    n = int(input())
-    s = input()
-    
-    a = 0
-    b = 0
-    for i in s:
-        if(i=='A'):
-            a += 1
+def dfs(graph, v, c, vis):
+    vis[v]= True
+    for i in graph[v]:
+        if not vis[i]:
+            dfs(graph, i, c, vis)
         else:
-            b += 1
-    res = ""
-    if(max(a,b)-min(a,b)==1):
-        res += "Y"
-    else:
-        res += "N"    
-    print("Case #{}: {}".format(_+1, res))
+            #if(i!=v):
+            c[0]+= 1
+
+
+def dft(graph,n,m):
+    vis = [False for i in range(n+1)]
+    c = [0]
+    for i in range(1,n+1):
+        if not vis[i]:
+            dfs(graph, i, c, vis)
+    return c[0]
+
+
+n,m = map(int, input().split())
+graph = [[]for i in range(n+1)]
+for i in range(m):
+    a,b = map(int, input().split())
+    graph[a].append(b)
+    #graph[b].append(a)
+ans = dft(graph,n,m)
+print(ans)
+
+#python "F:\cpp\random\py\PROBLEM1_PYTHON_RITAPRAVO_SARKER.py"
