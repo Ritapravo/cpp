@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<bits/stdc++.h>
-#include<stdio.h>
 #define int long long int
 #define v(x) vector<x>
 using namespace std;
@@ -10,30 +9,26 @@ void print(v(int)&arr);
 
 
 signed main(){
-	int t;
-	cin>>t;
-	while(t--){
-		v(int)arr;
-		int x;
-		while(true){
-			cin >>x;
-			if(x == -1)
-				break;
-			else
-				arr.push_back(x);
-		}
-		int n  = arr.size(), cnt = 0, tot = 0, pos = 0 ;
-		for(int i = 0; i<n; i++){
-			if(arr[i]>30)
-				cnt += 1;
-			if(arr[i]%2==0){
-				pos += i+1;
-				tot += arr[i]*(i+1);
-			}
-		}
-		float ans = (float)tot/pos;
-		printf("%lld %0.2f\n",cnt, ans );
+	int n,m,r;
+	cin>>n>>m>>r;
+	int a[n],b[m];
+	int s1 = 0,s2 = 0;
+	for(int i = 0; i<n; i++){
+		cin>>a[i];
+		s1 += a[i]-r;
 	}
+	for(int i = 0; i<m; i++){
+		cin>>b[i];
+		s2 += b[i]-r;
+	}
+	int ans = abs(s1-s2);
+	ans += r;
+	if(s1==s2)
+		cout<<"Balanced"<<endl;
+
+	else if(s1>s2)cout<<-1*ans<<endl;
+	else
+		cout<<ans<<endl;
 	return 0;
 }
 

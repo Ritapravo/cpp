@@ -1,52 +1,28 @@
+
+
 #include<iostream>
+#include<vector>
 #include<bits/stdc++.h>
+#define int long long int
+#define v(x) vector<x>
 using namespace std;
-#define N 8
-
-void swap(int &x, int &y){
-    int temp = x;
-    x = y;
-    y = temp;
-}
-
-
-int partition(int arr[], int p, int q){
-    int pivot = p;
-    int i = p+1, j = q, x =arr[p];
-	//cout<<"1 "<<i<<" "<<j<<" "<<arr[i]<<endl;
-    while(i<=j){
-        while(i<=j && (arr[i]<=x ||arr[j]>=x)){
-			if (arr[i]<=x)i++;
-			if (arr[j]>=x)j--;
-		}
-		//cout<<"2 "<<i<<" "<<j<<" "<<arr[i]<<endl;
-		if(i<j)swap(arr[i],arr[j]);
-    }
-    swap(arr[pivot],arr[j]);
-    return j;
-}
-
-
-void QuickSort(int arr[], int p, int q){
-    if(p<q){
-        int j = partition(arr,p,q);
-        QuickSort(arr, p, j-1);
-        QuickSort(arr, j+1, q);
-    }
-}
 
 
 signed main(){
-    cout<<"Hello Ritoman"<<endl;
-    int arr[] = {35,20,40,50,30,60,15,75};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    QuickSort(arr,0,n-1);
-    for(int i = 0; i<n; i++){cout<<arr[i]<<" ";}
-
-
-	int arr2[] = {2,2,2,2,2,2,2,2,2};
-	int n2 = sizeof(arr2)/sizeof(arr2[0]);
-    int x = partition(arr2,0,n2-1);
-	cout<<"\n"<<x<<endl;
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i = 0; i<n; i++){
+            cin>>arr[i];
+        }
+        int r3 = (arr[0]/arr[n-1])*n;
+        cout<<r3<<endl;
+    }
     return 0;
 }
+
+//g++ "tmp5.cpp" && a
+//g++ "F:\cpp\random\tmp5.cpp" && a 

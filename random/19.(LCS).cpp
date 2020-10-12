@@ -52,7 +52,7 @@ void LCS(string &s1, string &s2){
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
         }
     }
-    //print(dp);
+    print(dp);
     set<string> s;
     subs(dp, s1, s2, row, col, s);
     for(string str:s)
@@ -67,3 +67,7 @@ signed main(){
     cin>>s1>>s2;
     LCS(s1,s2);
 }
+
+
+//g++ "19.(LCS).cpp" && a
+//g++ "F:\cpp\random\19.(LCS).cpp" && a 
