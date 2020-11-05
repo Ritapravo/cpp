@@ -72,3 +72,6 @@ void dfs(v(v(char))&grid, int i,int j,int m,int n){
     dfs(grid, i-1, j, m, n);
     dfs(grid, i+1, j, m, n);
 }
+
+//g++ "20.(Finding_islands_leetcode).cpp" && a
+//g++ "F:\cpp\random\20.(Finding_islands_leetcode).cpp" && a 

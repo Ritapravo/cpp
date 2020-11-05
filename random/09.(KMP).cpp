@@ -9,7 +9,7 @@ vector<ll>prefix(string s);
 ll KMP (string s, string t);
 
 int main(){
-    cout<<"Enter master string and then the key string."<<endl; 
+    //cout<<"Enter master string and then the key string."<<endl; 
     string s, t;
     cin>>s>>t;
     ll count = KMP(s,t);
@@ -52,3 +52,6 @@ ll KMP (string s, string t){
     }
     return count;
 }
+
+//g++ "09.(KMP).cpp" && a
+//g++ "F:\cpp\random\09.(KMP).cpp" && a 

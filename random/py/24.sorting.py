@@ -31,8 +31,42 @@ def selectionsort(arr):
         arr[i], arr[minpos] = arr[minpos], arr[i]
 
 
+def merge(arr, l, m, r):
+    n1 = m-l+1
+    n2 = r-m
+    a = arr[l:m+1]
+    b = arr[m+1:r+1]
+    i,j,k = 0,0,l
+    while(i<n1 and j<n2):
+        if(a[i]<b[j]):
+            arr[k] = a[i]
+            i += 1
+        else:
+            arr[k] = b[j]
+            j += 1
+        k += 1
+    while(i<n1):
+        arr[k] = a[i]
+        i+=1
+        k+=1
+    while(j<n2):
+        print(k,j,)
+        arr[k] = b[j]
+        j+=1
+        k+=1
+
+
+def mergesort(arr, l, r):
+    if(l<r):
+        m = l + (r-l)//2
+        mergesort(arr, l, m)
+        mergesort(arr, m+1, r)
+        merge(arr, l, m, r)
+
+
+
 arr = [5,2,9,1,3,6]
-selectionsort(arr)
+mergesort(arr,0,len(arr)-1)
 print(arr)
 
 
