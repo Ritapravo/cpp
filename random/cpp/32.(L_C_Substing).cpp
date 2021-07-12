@@ -20,6 +20,8 @@ void LCS(string s1, string s2, int n1, int n2){
     }
     if(s1[n1-1]==s2[n2-1]){
         LCS(s1,s2,n1-1,n2-1);
+        LCS(s1,s2,n1,n2-1);
+        LCS(s1,s2,n1-1,n2);
         dp[n1][n2] = 1+dp[n1-1][n2-1];
         ans = max(ans, dp[n1][n2]);
     }
@@ -35,7 +37,7 @@ void LCS(string s1, string s2, int n1, int n2){
 signed main(){
     memset(dp, -1, sizeof(dp));
     ans = 0;
-    string s1 = "ab", s2 = "cabcdfe";
+    string s1 = "abcde", s2 = "cde";
     int n1 = s1.size(), n2 = s2.size();
     LCS(s1, s2, n1, n2);
     cout<<ans<<endl;

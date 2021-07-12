@@ -1,28 +1,26 @@
 
-arr = [25,60,10,25,30]
-n = len(arr)
+def evalPostfix(cls, input1):
+    st = []
+    for c in input1:
+        if(c.isdigit()):
+            st.append(int(c))
+        else:
+            y = st.pop()
+            x = st.pop()
+            if(c=='+'):
+                st.append(x+y)
+            elif(c=='-'):
+                st.append(x-y)
+            elif(c=='*'):
+                st.append(x*y)
+            elif(c=='/'):
+                st.append(x//y)
+    return st.pop()
 
-""" for i in range(n):
-    for j in range(n-i-1):
-        if(arr[j]>arr[j+1]):
-            arr[j],arr[j+1] = arr[j+1],arr[j] """
+print(evalPostfix('879-2*+'))
+print(evalPostfix('84-'))
+print(evalPostfix('84/'))
+#print(evalPostfix(''))
 
-for i in range(1,len(arr)):
-    key = arr[i]
-    j = i-1
-    while(j>=0 and key<arr[j]):
-        arr[j+1] = arr[j]
-        j -= 1
-    arr[j+1] = key
-""" 
-for i in range(1, len(arr)): 
-  
-        key = arr[i] 
-        j = i-1
-        while j >= 0 and key < arr[j] : 
-                arr[j + 1] = arr[j] 
-                j -= 1
-        arr[j + 1] = key  """
-print(arr)
 
 #python "F:\cpp\random\py\new.py"

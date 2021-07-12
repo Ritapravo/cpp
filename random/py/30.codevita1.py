@@ -1,56 +1,35 @@
+from collections import deque as queue
 
+def dfs(graph, u):
+    print(u)
+    visited[u] = True
+    for i in graph[u]:
+        if(not visited[i]):
+            dfs(graph, i)
 
-def compute(li, meax):
-    n = len(li)
-    count = 0
-    for i in range(1<<n):
-        count_one = 0
-        z = 0
-        for j in range(n):
-            if((i>>j)&1):
-                count_one += li[j]
-                z += meax - li[j]
-        if (count_one==z):
-            if(z!=0):
-                count += 1
-    return count
-
-
-
-n = int(input())
-array = [int(i) for i in input().split()]
-m = array[0]
-for i in range(n):
-    if array[i]>m:
-        m = array[i]
-def binary(n):
-    s = ""
-    while(n>0):
-        s += str(n%2)
-        n = n//2
-    return s[::-1]
-
-meax = len(binary(m))
-bi = []
-for x in array:
-    b = binary(x)
-    count_one = 0
-    for i in b:
-        if(i=='1'):
-            count_one += 1
-    bi.append(count_one)
-
-c = compute(bi,meax)
-
-result = c
-
-result = binary(c)
-final = (result)
-if len(result)<=meax:
-    final = "0"*(meax-len(result)) + result
-print(final)
+def bfs(graph, v):
+    visited[v] = True
+    arr = queue()
+    arr.append(v)
+    print(v)
+    s,k = 1,1
+    while(s):
+        u = arr.popleft()
+        s -= 1
+        k -= 1
+        for i in graph[u]:
+            if(not visited[i]):
+                visited[i] = True
+                arr.append(i)
+                s += 1
+                print(i, end = " ")
+        if(k==0):
+            k = s
+            print("")
 
 
 
-
-#python "F:\cpp\random\py\30.codevita1.py"
+graph =  [[],[2],[1,4,5],[6],[2,8],[2,8],[3,8],[8],[4,5,6,7]]
+n = len(graph)
+visited = [False for i in range(n)]
+bfs(graph, 1)

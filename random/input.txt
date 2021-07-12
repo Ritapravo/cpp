@@ -1,0 +1,35 @@
+100 -> 6
+99 -> 7
+34 -> 55
+6 -> 55
+7 -> 74
+55 -> 16
+16 -> 100
+
+sort -nr -k3|awk -F "-" '{
+    if($4~/[Kk][aA][Rr][Nn][aA][Tt][Aa][Kk][aA]/)
+        {
+            print $1","$2","$3
+            c+=1
+            temp+=$2
+        }
+}
+END{
+        if(c>0)print "Average temperature in Karnataka:"temp/c
+        else print "No records found"
+    }'
+
+awk -F"," '
+    BEGIN{ IGNORECASE = 1;c=0;}
+    $4~/^[Ll][Aa][Nn][Ds][Ss][cC][aA][pP][Ee]$/{
+        if($3>1000){
+            print $1, $2, $3 ;
+            c++;
+        }
+    }
+    END{
+        if(c==0){
+            print "No painting found";
+        }
+    }
+'   | sort -nk3
